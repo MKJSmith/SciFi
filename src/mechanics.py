@@ -21,14 +21,17 @@ def number_input(input_text):
     return number
 
 
-def choice_input(choices_string, number_of_choices):
+def choice_input(choices):
     """
-    :type choices_string: str
-    :type number_of_choices: int
-    :param choices_string:
-    :param number_of_choices:
-    :return: int
+    :type choices: list
+    :param choices:
+    :return:
     """
+    number_of_choices = choices.__len__()
+    choices_string = 'What would you like to do?\n'
+    for i in range(number_of_choices):
+        choices_string += f'{i + 1}. {choices[i]}\n'
+
     selection = None
     while selection is None:
         selection = number_input(choices_string)

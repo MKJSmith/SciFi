@@ -1,4 +1,4 @@
-from abc import ABC
+from abc import ABC, abstractmethod
 from ..mechanics import *
 
 
@@ -29,6 +29,10 @@ class Scenario(ABC):
 
     def get_character(self):
         return self.character
+
+    def end_game(self, reason):
+        self.game_running = False
+        print(reason)
 
     def is_game_running(self):
         return self.game_running

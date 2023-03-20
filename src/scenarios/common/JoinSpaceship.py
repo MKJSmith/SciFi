@@ -10,9 +10,11 @@ class JoinSpaceship(Scenario):
         print("As you wander through the spaceport, you see three different spacecraft that are about to depart.\n"
               "Which one do you want to join?\n")
 
-        selection = choice_input("1. Pirate ship (+3 combat, -2 leadership, +1 engineering)\n"
-                                 "2. Royal navy ship (+3 leadership, +1 combat)\n"
-                                 "3. Asteroid mining vessel (+3 engineering, -2 combat, +1 piloting)\n> ", 3)
+        selection = choice_input([
+            "Pirate ship (+3 combat, -2 leadership, +1 engineering)",
+            "Royal navy ship (+3 leadership, +1 combat)",
+            "Asteroid mining vessel (+3 engineering, -2 combat, +1 piloting)"
+        ])
 
         modified_skills = {}
         selected_ship = None
