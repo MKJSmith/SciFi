@@ -136,13 +136,11 @@ def join_spaceship():
     print("As you wander through the spaceport, you see three different spacecraft that are about to depart.\n"
           "Which one do you want to join?\n")
 
-    choices = [
+    selection = choice_input([
         "Pirate ship (+3 combat, -2 leadership, +1 engineering)",
         "Royal navy ship (+3 leadership, +1 combat)",
         "Asteroid mining vessel (+3 engineering, -2 combat, +1 piloting)"
-    ]
-
-    selection = choice_input(choices)
+    ])
 
     modified_skills = {}
     selected_ship = None
@@ -186,17 +184,15 @@ def spaceship_crew_selection():
     print(f"Welcome aboard, {character['name']}! The captain is looking for a new crew member to help with the mission."
           "\nWhich position would you like to apply for?")
 
-    choices = [
-        "Pilot",
-        "Engineer",
-        "Medical Officer",
-        "Communications Officer",
-        "Security Officer"
-    ]
-
     selection = None
     while selection is None:
-        selection = choice_input(choices)
+        selection = choice_input([
+            "Pilot",
+            "Engineer",
+            "Medical Officer",
+            "Communications Officer",
+            "Security Officer"
+        ])
         selection = validate_selection(selection)
 
     character['role'] = selection
@@ -281,11 +277,9 @@ def pirate_ship_scenarios():
 
 # Add any mining specific scenarios here
 def mining_ship_scenarios():
-    global game_running
-    while game_running:
-        defend_ship()
-        # TODO: add some more scenarios!
-        # Maybe add a scenario about discovering a derelict ship, with the potential for some horror elements @Ella?
+    defend_ship()
+    # TODO: add some more scenarios!
+    # Maybe add a scenario about discovering a derelict ship, with the potential for some horror elements @Ella?
 
 
 def defend_ship():
@@ -385,8 +379,7 @@ def wormhole_encounter():
     print("\nYour crew has detected a strange anomaly beyond Neptune, a wormhole!\nWhere could it lead?\n"
           "Why is it here?\nAnswers can only be found if you approach it and decide how your ship will react...")
 
-    choices = ["Proceed with caution", "Blast through the wormhole", "Turn back"]
-    action = choice_input(choices)
+    action = choice_input(["Proceed with caution", "Blast through the wormhole", "Turn back"])
 
     if action == 1:
         # Maybe here you have a 50/50 chance of making it through?
