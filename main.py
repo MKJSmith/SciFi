@@ -1,4 +1,4 @@
-# Single File Game
+# Single File version of the Game
 import random
 
 # Globals:
