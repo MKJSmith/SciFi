@@ -347,7 +347,6 @@ def loot_ship():
                       "operation goes off with out a hitch and you return to your ship to find your crew also managed\n"
                       "to steal a bounty of mined gold and platinum. In recognition of your engineering skills, you \n"
                       "get a share of the loot.")
-                character['items'].append('gold & platinum')
                 character['items'].append('jet fuel')
                 display_inventory()
             else:
@@ -370,7 +369,6 @@ def loot_ship():
                          "destroying your ships ability to move. The miners hail for navy assistance and leave you\n"
                          "and your crew stranded awaiting arrest. Perhaps with higher leadership skills you could\n"
                          "have been more convincing.")
-    return
 
 
 def protect_ship():
