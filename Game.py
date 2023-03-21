@@ -13,6 +13,7 @@ class Game:
 
     def pirate_scenarios(self):
         self.run_scenario(LootShip(self.character, self.game_running))
+        self.run_scenario(EscapeNavy(self.character, self.game_running))
 
     def navy_scenarios(self):
         pass
